@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titulo del evento</th>
+            <th scope="col">Categoria del evento</th>
+            <th scope="col">Lugar del evento</th>
+            <th scope="col">Aprobar evento</th>
+            <th scope="col">Desaprobar evento</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let evento of eventos; let i = index">
+            <th scope="row">{{ i+1}}</th>
+
+            <td>{{evento.titulo}}</td>
+            <td>{{evento.categoria}}</td>
+            <td>{{evento.lugar}}</td>
+            <td><button type="button" class="btn btn-success" (click)="aprobarEvento(evento.id_solicitud)">Aprobar</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="desaprobarEvento(evento.id_solicitud)">Desaprobar</button></td>
+        </tr>
+
+    </tbody>
+</table>
+<div *ngIf="!eventos.length" class="text-center"> No hay solicitudes pendientes</div>

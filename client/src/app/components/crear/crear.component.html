@@ -1,0 +1,341 @@
+<!-- <div class="container">
+    <div class="starter-template">
+
+        <div class="col-md-12 mt-5">
+            <h1 class="subtitulo">{{ title }}</h1>
+
+            <form [formGroup]="contacto">
+
+                <div class="form-group">
+                    <label><b>Titulo del evento</b></label>
+                    <input type="text" name="titulo" [(ngModel)]="evento.titulo" formControlName="titulo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.titulo.errors }" />
+                    <div *ngIf="submitted && f.titulo.errors" class="invalid-feedback">
+                        <div *ngIf="f.titulo.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><b>descripcion</b></label>
+                    <textarea rows="3" type="text" name="descripcion" [(ngModel)]="evento.descripcion" formControlName="descripcion" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }"></textarea>
+                    <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
+                        <div *ngIf="f.descripcion.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><b>imagen</b></label>
+                    <input type="text" name="imagen" [(ngModel)]="evento.imagen" formControlName="imagen" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.imagen.errors }" />
+                    <div *ngIf="submitted && f.imagen.errors" class="invalid-feedback">
+                        <div *ngIf="f.imagen.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><b>categoria</b></label>
+                    <input type="text" name="categoria" [(ngModel)]="evento.categoria" formControlName="categoria" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.categoria.errors }" />
+                    <div *ngIf="submitted && f.categoria.errors" class="invalid-feedback">
+                        <div *ngIf="f.categoria.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><b>Nombres del expositor</b></label>
+                    <input type="text" name="nom_expositor" [(ngModel)]="evento.nom_expositor" formControlName="nom_expositor" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nom_expositor.errors }" />
+                    <div *ngIf="submitted && f.nom_expositor.errors" class="invalid-feedback">
+                        <div *ngIf="f.nom_expositor.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><b>Apellidos del expositor</b></label>
+                    <input type="text" name="ape_expositor" [(ngModel)]="evento.ape_expositor" formControlName="ape_expositor" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ape_expositor.errors }" />
+                    <div *ngIf="submitted && f.ape_expositor.errors" class="invalid-feedback">
+                        <div *ngIf="f.ape_expositor.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label><b>id_aula</b></label>
+
+                    <select name="id_aula" [(ngModel)]="evento.id_aula" formControlName="id_aula" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id_aula.errors }">
+                        <option value="1">Auditorio de la Facultad de Ingeniería de Sistemas</option>
+                        <option value="2" selected>Aula Magna</option>
+                        <option value="3">Laboratorio 3</option>
+                      </select>
+                    <div *ngIf="submitted && f.id_aula.errors" class="invalid-feedback">
+                        <div *ngIf="f.id_aula.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><b>id_conferencia</b></label>
+                    <input type="text" name="id_conferencia" [(ngModel)]="evento.id_conferencia" formControlName="id_conferencia" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id_conferencia.errors }" />
+                    <div *ngIf="submitted && f.id_conferencia.errors" class="invalid-feedback">
+                        <div *ngIf="f.id_conferencia.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><b>id_solicitud</b></label>
+                    <input type="text" name="id_solicitud" [(ngModel)]="evento.id_solicitud" formControlName="id_solicitud" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id_solicitud.errors }" />
+                    <div *ngIf="submitted && f.id_solicitud.errors" class="invalid-feedback">
+                        <div *ngIf="f.id_solicitud.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+
+
+<!-- ***************************************************************************************************************************************************************-->
+                <!-- <div class="form-group">
+                    <label><b>FECHA DE INICIO DEL EVENTO</b></label>
+                    <input type="date" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">
+                            La fecha de inicio es obligatorio
+                        </div>
+                        <div *ngIf="f.email.errors.email">
+                            Por favor, ingresa la fecha de inicio
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><b>FECHA FINAL DEL EVENTO</b></label>
+                    <input type="date" name="fecha" formControlName="FechaFin" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">
+                            La fecha fin del evento es obligatorio
+                        </div>
+                        <div *ngIf="f.email.errors.email">
+                            Por favor, ingresa la fecha fin del evento
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Certificado">
+          <b>CERIFICADO</b></label
+        >
+        <select
+          class="form-control"
+          formControlName="postre"
+          [ngClass]="{ 'is-invalid': submitted && f.postre.errors }"
+        >
+          <option value="">Seleccionar</option>
+          <option value="si">SI</option>
+          <option value="no">NO</option>
+
+        </select>
+        <div
+          *ngIf="submitted && f.postre.errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f.postre.errors.required">
+            Por favor, Selecciona Si tiene o no certificado
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label><b>Lugar del evento</b></label>
+                    <input type="text" formControlName="asunto" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.asunto.errors }" />
+                    <div *ngIf="submitted && f.asunto.errors" class="invalid-feedback">
+                        <div *ngIf="f.asunto.errors.required">
+                            Por favor, ingrese el lugar del evento
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="TipoEvemto">
+          <b>SELECIONE EL TIPO DE EVENTO</b></label
+        >
+        <select
+          class="form-control"
+          formControlName="evento"
+          [ngClass]="{ 'is-invalid': submitted && f.postre.errors }"
+        >
+          <option value="">Seleccionar</option>
+          <option value="Taller">TALLER</option>
+          <option value="Conferencia">CONFERENCIA</option>
+          <option value="Curso">CURSO</option>
+          <option value="Congreso">CONGRESO</option>
+        </select>
+        <div
+          *ngIf="submitted && f.postre.errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f.postre.errors.required">
+            Por favor, Selecciona el el tipo de evento
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="mensaje"><b>DESCRIPCION DEL EVENTO</b> </label>
+                    <textarea class="form-control" formControlName="mensaje" rows="3" [ngClass]="{ 'is-invalid': submitted && f.mensaje.errors }"></textarea>
+                    <div *ngIf="submitted && f.mensaje.errors" class="invalid-feedback">
+                        <div *ngIf="f.mensaje.errors.required">
+                            Por favor, ingresa una breve descipcion del evento ( 20 Caracteres mínimo )
+                        </div>
+                    </div>
+                </div> -->
+
+
+<!-- ***********************************************************************************************-->
+
+    <!--            <div class="form-group">
+                    <button class="btn btn-primary" [disabled]="contacto.invalid" (click)="guardarEvento()">
+          Aceptar
+        </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+<div class="col-sm-15 m-5">
+    <div class="card">
+        <div class="card-header">
+            <strong>Información general del evento </strong>
+        </div>
+        <div class="card-body">
+
+          <div class="container col-md-12 mt-5">
+            <form [formGroup]="contacto">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label><b>Titulo del evento</b></label>
+                    <input type="text" name="titulo" [(ngModel)]="evento.titulo" formControlName="titulo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.titulo.errors }" />
+                    <div *ngIf="submitted && f.titulo.errors" class="invalid-feedback">
+                        <div *ngIf="f.titulo.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label><b>Imagen</b></label>
+                    <input type="text" name="imagen" [(ngModel)]="evento.imagen" formControlName="imagen" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.imagen.errors }" />
+                    <div *ngIf="submitted && f.imagen.errors" class="invalid-feedback">
+                        <div *ngIf="f.imagen.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="form-group">
+                  <label><b>Descripcion</b></label>
+                  <textarea rows="3" type="text" name="descripcion" [(ngModel)]="evento.descripcion" formControlName="descripcion" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }"></textarea>
+                  <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
+                      <div *ngIf="f.descripcion.errors.required">
+                          Ingrese el nombre completo
+                      </div>
+                  </div>
+              </div>
+            <!--  <div class="form-group">
+                <label for="exampleFormControlTextarea1">Descripción</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              <!-- sdfsf -->
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label><b>Nombres del expositor</b></label>
+                    <input type="text" name="nom_expositor" [(ngModel)]="evento.nom_expositor" formControlName="nom_expositor" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nom_expositor.errors }" />
+                    <div *ngIf="submitted && f.nom_expositor.errors" class="invalid-feedback">
+                        <div *ngIf="f.nom_expositor.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label><b>Apellidos del expositor</b></label>
+                    <input type="text" name="ape_expositor" [(ngModel)]="evento.ape_expositor" formControlName="ape_expositor" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ape_expositor.errors }" />
+                    <div *ngIf="submitted && f.ape_expositor.errors" class="invalid-feedback">
+                        <div *ngIf="f.ape_expositor.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label><b>Categoría</b></label>
+
+                    <select name="categoría" [(ngModel)]="evento.categoria" formControlName="categoria" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.categoria.errors }">
+                        <option value="Taller">Taller</option>
+                        <option value="Conferencia" selected>Conferencia</option>
+                        <option value="Congreso">Congreso</option>
+                      </select>
+                    <div *ngIf="submitted && f.categoria.errors" class="invalid-feedback">
+                        <div *ngIf="f.categoria.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label><b>Aula</b></label>
+
+                    <select name="id_aula" [(ngModel)]="evento.id_aula" formControlName="id_aula" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id_aula.errors }">
+                        <option value="1">Auditorio de la Facultad de Ingeniería de Sistemas</option>
+                        <option value="2" selected>Aula Magna</option>
+                        <option value="3">Laboratorio 3</option>
+                      </select>
+                    <div *ngIf="submitted && f.id_aula.errors" class="invalid-feedback">
+                        <div *ngIf="f.id_aula.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label><b>Conferencia</b></label>
+                    <input type="text" name="id_conferencia" [(ngModel)]="evento.id_conferencia" formControlName="id_conferencia" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id_conferencia.errors }" />
+                    <div *ngIf="submitted && f.id_conferencia.errors" class="invalid-feedback">
+                        <div *ngIf="f.id_conferencia.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label><b>Solicitud</b></label>
+                    <input type="text" name="id_solicitud" [(ngModel)]="evento.id_solicitud" formControlName="id_solicitud" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id_solicitud.errors }" />
+                    <div *ngIf="submitted && f.id_solicitud.errors" class="invalid-feedback">
+                        <div *ngIf="f.id_solicitud.errors.required">
+                            Ingrese el nombre completo
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="form-group">
+                    <button class="btn btn-primary" [disabled]="contacto.invalid" (click)="guardarEvento()">
+                      Aceptar
+                    </button>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

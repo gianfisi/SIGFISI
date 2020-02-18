@@ -1,0 +1,114 @@
+<!-- <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)">
+    <label>Nombre:</label>
+    <input formControlName="nombre" type="text">
+    <div *ngIf="signupForm.get('nombre').hasError('required')">Es necesario introducir el nombre</div>
+
+    <button [disabled]="signupForm.invalid" type="submit">Registrarse</button>
+</form> -->
+<div class="container">
+    <div class="starter-template">
+        <div class="site-section">
+            <div class="row">
+                <div class="col-md-12 mt-5">
+                    <h1 class="subtitulo">Registrar Usuario</h1>
+
+                    <form [formGroup]="contacto2">
+                        <!--(ngSubmit)="enviar(contacto.value)"-->
+                        <div class="form-group">
+                            <label><b>Nombres completos</b></label>
+                            <input type="text" name="nombres" [(ngModel)]="usuario.nombres" formControlName="nya" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nya.errors }" />
+                            <div *ngIf="submitted && f.nya.errors" class="invalid-feedback">
+                                <div *ngIf="f.nya.errors.required">
+                                    Ingrese el nombre completo
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><b>Apellidos completos</b></label>
+                            <input type="text" name="apellidos" [(ngModel)]="usuario.apellidos" formControlName="nya" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nya.errors }" />
+                            <div *ngIf="submitted && f.nya.errors" class="invalid-feedback">
+                                <div *ngIf="f.nya.errors.required">
+                                    Ingrese el apellido completo
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dni"><b>DNI</b></label>
+                            <input type="number" class="form-control" formControlName="dni" [(ngModel)]="usuario.dni" [ngClass]="{ 'is-invalid': submitted && f.dni.errors }">
+                            <div *ngIf="submitted && f.dni.errors" class="invalid-feedback">
+                                <div *ngIf="f.dni.errors.required">
+                                    Ingresa tu dni
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="celular"><b>celular</b></label>
+                            <input type="number" class="form-control" formControlName="celular" [(ngModel)]="usuario.celular" [ngClass]="{ 'is-invalid': submitted && f.celular.errors }">
+                            <div *ngIf="submitted && f.celular.errors" class="invalid-feedback">
+                                <div *ngIf="f.celular.errors.required">
+                                    Ingresa tu celular
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="distrito"><b>distrito</b></label>
+                            <input type="text" class="form-control" formControlName="distrito" [(ngModel)]="usuario.distrito" [ngClass]="{ 'is-invalid': submitted && f.distrito.errors }">
+                            <div *ngIf="submitted && f.distrito.errors" class="invalid-feedback">
+                                <div *ngIf="f.distrito.errors.required">
+                                    Ingresa tu distrito
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="direccion"><b>direccion</b></label>
+                            <input type="text" class="form-control" formControlName="direccion" [(ngModel)]="usuario.direccion" [ngClass]="{ 'is-invalid': submitted && f.direccion.errors }">
+                            <div *ngIf="submitted && f.direccion.errors" class="invalid-feedback">
+                                <div *ngIf="f.direccion.errors.required">
+                                    Ingresa tu direccion
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="correo"><b>correo</b></label>
+                            <input type="text" class="form-control" formControlName="correo" [(ngModel)]="usuario.correo" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }">
+                            <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
+                                <div *ngIf="f.correo.errors.required">
+                                    Ingresa tu correo
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contrasena"><b>contraseña</b></label>
+                            <input type="password" class="form-control" formControlName="contrasena" [(ngModel)]="usuario.contrasena" [ngClass]="{ 'is-invalid': submitted && f.contrasena.errors }">
+                            <div *ngIf="submitted && f.contrasena.errors" class="invalid-feedback">
+                                <div *ngIf="f.contrasena.errors.required">
+                                    Ingresa tu distrito
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fecha"><b>Fecha de nacimiento</b></label>
+                            <input type="date" formControlName="fecha" [(ngModel)]="usuario.fecha_de_nacimiento" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fecha.errors }" />
+                            <div *ngIf="submitted && f.fecha.errors" class="invalid-feedback">
+                                <div *ngIf="f.fecha.errors.required">
+                                    La fecha de inicio es obligatorio
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" [disabled]="contacto2.invalid" (click)="guardarUsuario()">
+                    Registrar
+                    </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
